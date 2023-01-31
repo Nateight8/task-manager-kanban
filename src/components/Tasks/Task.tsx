@@ -122,7 +122,9 @@ function Task({ task }: Props) {
                                                                         return (
                                                                             <FormControlLabel
 
-                                                                                label={<Typography fontSize={14} variant="body1" sx={subtask.isCompleted ? { textDecoration: "line-through", color: "#818EA3" } : { color: "white" }} >{title}</Typography>}
+                                                                                label={<Typography fontSize={14} variant="body1"
+                                                                                // sx={subtask.isCompleted ? { textDecoration: "line-through", color: "#818EA3" } : { color: "white" }}
+                                                                                >{title}</Typography>}
 
                                                                                 control={
                                                                                     <Checkbox
