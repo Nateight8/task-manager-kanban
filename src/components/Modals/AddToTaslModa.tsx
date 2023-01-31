@@ -59,7 +59,7 @@ function AddToTaslModa({ open, handleClose }: Props) {
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 500,
+
         bgcolor: '#2b2c37',
         // border: '2px solid #000',
         boxShadow: 24,
@@ -117,7 +117,13 @@ function AddToTaslModa({ open, handleClose }: Props) {
             BackdropProps={{
                 timeout: 500,
             }}>
-            <Paper sx={{ ...style, color: 'white' }}>
+            <Paper sx={{ ...style, color: 'white', width: "95%", maxWidth: 500, position: "relative" }}>
+
+                <Box sx={{ position: "absolute", top: 0, right: 0, display: { sm: "none" } }}>
+                    <IconButton color="primary" aria-label="upload picture" component="label" onClick={handleClose}>
+                        <ClearIcon sx={{ color: "#7d899c" }} />
+                    </IconButton>
+                </Box>
 
                 <Box sx={{ paddingY: "0.6rem" }}>
                     <Typography variant="h6" >
@@ -131,7 +137,7 @@ function AddToTaslModa({ open, handleClose }: Props) {
                     onSubmit={(values, actions) => {
                         // console.log(values);
                         dispatch(addTask(values))
-
+                        handleClose(false)
 
 
                     }}>
@@ -204,7 +210,7 @@ function AddToTaslModa({ open, handleClose }: Props) {
 
                                                                             {
 
-                                                                                ({ field, form: { touched, errors }, meta }: FieldProps) => (
+                                                                                ({ field, meta }: FieldProps) => (
 
                                                                                     <StyledInputBase
                                                                                         {...field} />

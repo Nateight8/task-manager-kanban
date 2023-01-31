@@ -23,7 +23,7 @@ function Navbar({ }: Props) {
                 sx={{ background: '#2b2c37', border: "1px solid rgba(255,255,255, 0.1)" }}>
                 <Toolbar>
                     <Stack sx={{ width: "100%" }} direction="row" justifyContent="space-between" alignItems="center">
-                        <Box sx={{ padding: "1rem" }}>
+                        <Box sx={{ padding: "1rem", display: { xs: "none", sm: "block" } }}>
                             <Typography variant="h6">
                                 Kanban
                             </Typography>
@@ -35,7 +35,7 @@ function Navbar({ }: Props) {
                             <Button
                                 variant="contained"
                                 color="inherit"
-                                sx={{ background: "#635fc7", color: "white", borderRadius: "2.5rem", "&:hover": { background: "#635fc7", color: "white", } }}
+                                sx={{ display: { xs: "none", sm: "block" }, background: "#635fc7", color: "white", borderRadius: "2.5rem", "&:hover": { background: "#635fc7", color: "white", } }}
                                 //  startIcon={}
                                 onClick={() => {
                                     setOpen(true)
@@ -43,6 +43,18 @@ function Navbar({ }: Props) {
 
                             >
                                 Add Task
+                            </Button>
+                            <Button
+                                variant="contained"
+                                color="inherit"
+                                sx={{ display: { xs: "block", sm: "none" }, background: "#635fc7", color: "white", borderRadius: "2.5rem", "&:hover": { background: "#635fc7", color: "white", } }}
+                                //  startIcon={}
+                                onClick={() => {
+                                    setOpen(true)
+                                }}
+
+                            >
+                                +
                             </Button>
                         </Stack>
                     </Stack>
