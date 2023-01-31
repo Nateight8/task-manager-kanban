@@ -6,35 +6,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import { Boards, Column } from '@/utils/interface';
+import { Board, Boards, Column } from '@/utils/interface';
 import { Box, List, ListItem, ListItemButton, ListItemText, Stack, Button, Toolbar } from '@mui/material';
 import Task from '@/components/Tasks/Task';
+import { useAppSelector } from '@/redux/store';
 // import ViewModal from '@/components/Modals/ViewModal';
 // import "swiper/css/pagination";
 
 
 type Props = {
-    data: Boards
+    // data: Boards
     index: number
 }
 
-function Board({ data, index }: Props) {
+function BoardUi({ }: Props) {
 
-
-    index = 0
-
-    let boardData = data[index]
-    console.log(boardData.columns);
-
-
-    const store = useSelector((store) => {
-        return (store.storeTasks);
+    const store = useAppSelector((store) => {
+        return (store.storeTasks)
     })
-
-    // tasks()
-
-    console.log(store.columns);
-
 
     return (
         <>
@@ -45,7 +34,8 @@ function Board({ data, index }: Props) {
 
 
                     <Typography variant="h6" sx={{ textTransform: "capitalize", color: "white" }} >
-                        {boardData.name}
+                        {/* {boardData.name} */}
+                        project
                     </Typography>
                     <Swiper
                         slidesPerView={1.3}
@@ -140,22 +130,22 @@ function Board({ data, index }: Props) {
     )
 }
 
-export default Board
+export default BoardUi
 
 
 
-export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
+// export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
 
 
 
-    const res = await fetch(`http://localhost:3500/boards`);
-    const data = await res.json();
+//     const res = await fetch(`http://localhost:3500/boards`);
+//     const data = await res.json();
 
 
-    return {
-        props: {
-            data,
-        }
-    }
+//     return {
+//         props: {
+//             data,
+//         }
+//     }
 
-}
+// }
