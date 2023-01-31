@@ -109,12 +109,12 @@ function Task({ task }: Props) {
                                                 {
 
                                                     subtasks.map((subtask, idx) => {
-                                                        const [Checked, setChecked] = useState(false);
+
                                                         const { isCompleted, title } = subtask
                                                         console.log(subtask);
 
                                                         return (
-                                                            <Field>
+                                                            <Field key={idx}>
                                                                 {
                                                                     ({ field, form }: FieldProps) => {
                                                                         // console.log(field.value);
