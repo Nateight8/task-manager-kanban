@@ -198,8 +198,8 @@ function AddToTaslModa({ open, handleClose }: Props) {
                                                         }}>
                                                             {
 
-                                                                subtasks.map((subtasks, index: number) => (
-                                                                    <Stack direction="row" alignItems="center" my={0.2} key={subtasks.title}>
+                                                                subtasks.map((subtask: Subtask, index: number) => (
+                                                                    <Stack direction="row" alignItems="center" my={0.2} key={subtask.title}>
                                                                         <Field name={`subtasks.${index}.title`}>
 
                                                                             {
@@ -261,9 +261,9 @@ function AddToTaslModa({ open, handleClose }: Props) {
 
                                                 <Select
                                                     {...field}
-                                                    // value={values.status}
-                                                    // // onChange={handleChange}
-                                                    // // onBlur={handleBlur}
+                                                    value={props.values.status}
+                                                    onChange={props.handleChange}
+                                                    // onBlur={handleBlur}
                                                     input={<StyledInputBase />}
                                                 >
 
