@@ -2,7 +2,7 @@ import { Board, Column, Task } from "@/utils/interface";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: Board = {
-  name: "Hello world",
+  name: "Ultimate Task",
   columns: [
     { name: "Todo", tasks: [] },
     { name: "Doing", tasks: [] },
