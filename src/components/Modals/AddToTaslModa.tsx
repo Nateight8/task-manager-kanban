@@ -115,10 +115,6 @@ function AddToTaslModa({ open, handleClose }: Props) {
       open={open}
       onClose={handleClose}
       closeAfterTransition
-      BackdropComponent={Backdrop}
-      BackdropProps={{
-        timeout: 500,
-      }}
     >
       <Paper
         sx={{

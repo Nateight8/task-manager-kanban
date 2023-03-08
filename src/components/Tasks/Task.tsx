@@ -149,7 +149,14 @@ function Task({ task }: Props) {
                                     <Typography
                                       fontSize={14}
                                       variant="body1"
-                                      // sx={subtask.isCompleted ? { textDecoration: "line-through", color: "#818EA3" } : { color: "white" }}
+                                      // sx={
+                                      //   checked
+                                      //     ? {
+                                      //         textDecoration: "line-through",
+                                      //         color: "#818EA3",
+                                      //       }
+                                      //     : { color: "white" }
+                                      // }
                                     >
                                       {title}
                                     </Typography>
